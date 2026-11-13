@@ -1,0 +1,64 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isAdmin() {
+      return request.auth != null
+        && request.auth.token.email == "REPLACE_WITH_MY_GMAIL"
+        && request.auth.token.email_verified == true;
+    }
+
+    function isZeroOrOneInt(val) {
+      return val is int && val >= 0 && val <= 1;
+    }
+
+    function isValidStatIncrement(key) {
+      return !(key in request.resource.data.diff(resource.data).affectedKeys())
+        || (
+          request.resource.data[key] is int
+          && (
+            (!(key in resource.data) && isZeroOrOneInt(request.resource.data[key]))
+            || (
+              resource.data[key] is int
+              && request.resource.data[key] >= resource.data[key]
+              && request.resource.data[key] <= resource.data[key] + 1
+            )
+          )
+        );
+    }
+
+    // Remote app configuration: public read for HisabFlow app, admin-only write
+    match /app_config/{docId} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // Analytics counters: admin-only read; HisabFlow clients may create or increment
+    // only 'installs' or 'active' by 0 or 1 without authentication
+    match /stats/{docId} {
+      allow read: if isAdmin();
+
+      allow create: if request.resource.data.keys().size() > 0
+        && request.resource.data.keys().hasOnly(['installs', 'active'])
+        && (!('installs' in request.resource.data) || isZeroOrOneInt(request.resource.data.installs))
+        && (!('active' in request.resource.data) || isZeroOrOneInt(request.resource.data.active));
+
+      allow update: if request.resource.data.diff(resource.data).affectedKeys().hasOnly(['installs', 'active'])
+        && isValidStatIncrement('installs')
+        && isValidStatIncrement('active');
+
+      allow delete: if false;
+    }
+
+    // Push history: admin-only read; written solely by Cloud Function via Admin SDK
+    match /push_history/{docId} {
+      allow read: if isAdmin();
+      allow write: if false;
+    }
+
+    // Deny everything else by default
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

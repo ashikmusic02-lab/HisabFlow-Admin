@@ -1,0 +1,6 @@
+{
+  "name": "HisabFlow Admin",
+  "description": "Private admin companion app to manage HisabFlow statistics, ad configurations, and push notifications via Firebase.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

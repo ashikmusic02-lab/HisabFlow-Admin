@@ -1,0 +1,64 @@
+<resources>
+    <string name="app_name">HisabFlow Admin</string>
+
+    <!-- Navigation & Common -->
+    <string name="tab_dashboard">ড্যাশবোর্ড</string>
+    <string name="tab_ads">বিজ্ঞাপন</string>
+    <string name="tab_notifications">নোটিফিকেশন</string>
+    <string name="sign_out">সাইন আউট</string>
+    <string name="retry">আবার চেষ্টা করুন</string>
+    <string name="refresh">রিফ্রেশ</string>
+
+    <!-- Auth -->
+    <string name="auth_title">HisabFlow Admin</string>
+    <string name="auth_subtitle">ব্যক্তিগত অ্যাডমিন কন্ট্রোল প্যানেল</string>
+    <string name="auth_security_note">শুধুমাত্র অনুমোদিত অ্যাডমিন গুগল অ্যাকাউন্ট দিয়ে প্রবেশ করা যাবে।</string>
+    <string name="sign_in_with_google">Sign in with Google</string>
+    <string name="auth_unauthorized">এই অ্যাকাউন্টের অনুমতি নেই</string>
+    <string name="auth_signing_in">যাচাই করা হচ্ছে...</string>
+    <string name="auth_firebase_not_configured">Firebase সংযোগ কনফিগার করা হয়নি। app/google-services.json যোগ করে আবার বিল্ড করুন।</string>
+
+    <!-- Dashboard -->
+    <string name="dashboard_total_users">মোট ব্যবহারকারী</string>
+    <string name="dashboard_active_today">আজ সক্রিয়</string>
+    <string name="dashboard_last_7_days">গত 7 দিনের সক্রিয় ব্যবহারকারী (UTC)</string>
+    <string name="dashboard_approx_note">সংখ্যা আনুমানিক</string>
+    <string name="dashboard_empty">কোনো পরিসংখ্যান পাওয়া যায়নি</string>
+
+    <!-- Ads -->
+    <string name="ads_section_title">বিজ্ঞাপন নিয়ন্ত্রণ</string>
+    <string name="ads_banner_label">ব্যানার বিজ্ঞাপন</string>
+    <string name="ads_banner_key">banner_enabled</string>
+    <string name="ads_native_label">নেটিভ বিজ্ঞাপন</string>
+    <string name="ads_native_key">native_enabled</string>
+    <string name="ads_interstitial_label">ইন্টারস্টিশিয়াল (ফুল-স্ক্রিন)</string>
+    <string name="ads_interstitial_key">interstitial_enabled</string>
+    <string name="ads_rewarded_label">রিওয়ার্ডেড বিজ্ঞাপন</string>
+    <string name="ads_rewarded_key">rewarded_enabled</string>
+    <string name="ads_interval_label">Interstitial minimum gap (seconds)</string>
+    <string name="ads_interval_helper">10 থেকে 600 সেকেন্ডের মধ্যে সংখ্যা লিখুন</string>
+    <string name="ads_interval_error">অবশ্যই 10 থেকে 600 এর মধ্যে হতে হবে</string>
+    <string name="ads_save_button">সংরক্ষণ করুন</string>
+    <string name="ads_last_updated">সর্বশেষ আপডেট</string>
+    <string name="ads_not_saved_yet">এখনো সংরক্ষিত হয়নি (ডিফল্ট মান)</string>
+    <string name="ads_saved_snackbar">বিজ্ঞাপন সেটিংস সংরক্ষিত হয়েছে</string>
+    <string name="ads_save_failed">আপডেট ব্যর্থ হয়েছে, আগের মান ফিরিয়ে আনা হয়েছে</string>
+
+    <!-- Notifications -->
+    <string name="notif_compose_title">নতুন নোটিফিকেশন পাঠান</string>
+    <string name="notif_title_label">শিরোনাম *</string>
+    <string name="notif_message_label">বার্তা *</string>
+    <string name="notif_image_url_label">ছবির লিংক (ঐচ্ছিক)</string>
+    <string name="notif_image_url_error">লিংকটি অবশ্যই https:// দিয়ে শুরু হতে হবে</string>
+    <string name="notif_screen_label">স্ক্রিন খুলুন (ঐচ্ছিক)</string>
+    <string name="notif_preview_title">লাইভ প্রিভিউ</string>
+    <string name="notif_send_test">টেস্ট পাঠান</string>
+    <string name="notif_send_all">সবাইকে পাঠান</string>
+    <string name="notif_confirm_title">সবাইকে নোটিফিকেশন পাঠাবেন?</string>
+    <string name="notif_confirm_cancel">বাতিল</string>
+    <string name="notif_confirm_send">নিশ্চিত ও পাঠান</string>
+    <string name="notif_history_title">সাম্প্রতিক পাঠানো ইতিহাস (শেষ 20টি)</string>
+    <string name="notif_history_empty">এখনো কোনো নোটিফিকেশন পাঠানো হয়নি</string>
+    <string name="notif_sent_test_success">টেস্ট নোটিফিকেশন সফলভাবে পাঠানো হয়েছে</string>
+    <string name="notif_sent_all_success">সবার কাছে নোটিফিকেশন পাঠানো হয়েছে</string>
+</resources>

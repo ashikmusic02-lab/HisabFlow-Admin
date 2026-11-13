@@ -67,6 +67,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "748823587759-9i9mnabs9bfpm4ouv8kmt9o17ib147cp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.farhadvariety.hisabflowadmin",
+            "certificate_hash": "04b06913b9abd41f41d3ab7aefdb0ba00f7d87ff"
+          }
+        },
+        {
           "client_id": "748823587759-rt2m48v88ukivi29k7s5ev8t8k4ier2j.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -88,5 +96,4 @@
       }
     }
   ],
-  "configuration_version": "1"
-}
+  "co

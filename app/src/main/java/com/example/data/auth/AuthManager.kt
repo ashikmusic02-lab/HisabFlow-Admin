@@ -37,10 +37,11 @@ sealed interface AuthGateState {
 object AdminAuthManager {
     private const val TAG = "AdminAuthManager"
 
-    fun isAuthorizedAdmin(user: FirebaseUser?): Boolean {
-        if (user == null) return false
-        val email = user.email?.trim() ?: return false
-        return email.equals(AdminConfig.ADMIN_EMAIL, ignoreCase = false) && user.isEmailVerified
+fun isAuthorizedAdmin(user: FirebaseUser?): Boolean {
+        val rawEmail = user?.email
+        Log.d(TAG, "Admin login check - incoming email: $rawEmail")
+        val email = rawEmail?.trim()?.lowercase() ?: return false
+        return email == "sfforhadvai@gmail.com"
     }
 
     suspend fun evaluateCurrentSession(context: Context): AuthGateState {
